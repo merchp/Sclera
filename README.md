@@ -12,9 +12,9 @@
 1. **[Features](#Features)** 
 2. **[Tech](#Tech)**
 3. **[ERD](ERD)**
-4. **[Database Diagram](#Database_Diagram)**
-5. **[Wire Flow](#Wireflow_Draft)**
-6. **[Sample Mobile App Images](#Sample_Mobile_App_Images)**
+4. **[Database Diagram](#DatabaseDiagram)**
+5. **[Wire Flow](#WireflowDraft)**
+6. **[Sample Mobile App Images](#SampleMobileAppImages)**
 
 &nbsp;
 
