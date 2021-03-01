@@ -2,6 +2,7 @@
 #### *Created by Chrishaun Byrom*
 &nbsp;
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
 [![Build Status](https://travis-ci.com/merchp/sclera.svg?branch=master)](https://travis-ci.com/github/merchp/sclera)
 
 *Sclera is a photography gear recommendation engine for aspiring or experienced photographers.*
@@ -11,9 +12,9 @@
 1. **[Features](#Features)** 
 2. **[Tech](#Tech)**
 3. **[ERD](ERD)**
-4. **[Database Diagram](#Database Diagram)**
-5. **[Wire Flow](#Wire Flow Draft)**
-6. **[Sample Mobile App Images](#Sample Mobile App Images)**
+4. **[Database Diagram](#Database_Diagram)**
+5. **[Wire Flow](#Wire_Flow_Draft)**
+6. **[Sample Mobile App Images](#Sample_Mobile_App_Images)**
 
 &nbsp;
 
@@ -47,5 +48,6 @@ Here's the first implementation of the apps nooks & crannies.
 
 ![Sclera Wireflow](https://user-images.githubusercontent.com/46344252/108671452-53371500-7495-11eb-9764-6737901b3530.png)
 
+# Sample Mobile App Images
 
 
