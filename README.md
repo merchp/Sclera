@@ -1,5 +1,9 @@
 # Sclera
 A photography gear recommendation engine for aspiring or experienced photographers.
+
+Table of Contents
+
+
 # Database Diagram
 
 ![sclera database diagram](https://user-images.githubusercontent.com/46344252/108671946-1cadca00-7496-11eb-9973-67024e2a6691.JPG)
