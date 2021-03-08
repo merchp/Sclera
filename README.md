@@ -27,6 +27,7 @@
 - Downloadable Personalized Photography gear list
 - Personalized Niche Generator
 - Recommended Courses
+
 &nbsp;
 ## Tech
 
@@ -42,18 +43,19 @@ Sclera uses a number of open source projects to work properly:
 &nbsp;
 ## Requirements
 
-
 ###  User Story
 As a photographer, I wanted to create a website that could link people’s existing passions with photography and guide them to a solution that fits within their lifestyle, budget and level of knowledge. Therefore, the Sclera recommendation engine which takes a survey of the user’s lifestyle, budget and level of knowledge and generates a visual recommendation for them to pursue their dream in photography.
 
-## Use Case Scenario 
+### Use Case Scenario 
 
 Given a new user, the user will be directed to a sign-in page where they will be able to sign in to the engine. When they sign up they will be able to start a survey. Then after completing the survey a visual recommendation of their photography niche and gear list will be generated.
 
+&nbsp;
 ### Use-Case Diagram (UML)
 
 ![sclera Use-Case Diagram](https://github.com/merchp/sclera/blob/3d5898ab8de35b4d9d39e15b7ddcc8f6549bf8f3/UML.png)
 
+&nbsp;
 ### Requirements 
 The user will opt to sign up for an account on Sclera.
 a.	The user will be asked to create an email, username, and password.
@@ -72,9 +74,11 @@ b.	Once saved the user can generate their recommendation.
 
 ![sclera database diagram](https://user-images.githubusercontent.com/46344252/108671946-1cadca00-7496-11eb-9973-67024e2a6691.JPG)
 
+&nbsp;
 ## Wireflow Draft
 Here's the first implementation of the apps nooks & crannies.
 
+&nbsp;
 ![Sclera Wireflow](https://user-images.githubusercontent.com/46344252/108671452-53371500-7495-11eb-9764-6737901b3530.png)
 
 # Sample Mobile App Images
