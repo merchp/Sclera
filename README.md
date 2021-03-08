@@ -6,7 +6,7 @@
 
 &nbsp;
 
-*Sclera is a photography gear recommendation engine for aspiring or experienced photographers.*
+*Sclera is a photography gear recommendation engine for aspiring or experienced photographers.* Start a survey, answer some very penetrating questions about your passions and preferences, find your niche & get a custom list of gear that you can take out and cature your world, your way.  
 
 &nbsp;
 # Table of Contents
