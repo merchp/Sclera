@@ -5,7 +5,9 @@
 
 
 &nbsp;
+
 *Sclera is a photography gear recommendation engine for aspiring or experienced photographers.*
+
 &nbsp;
 # Table of Contents
 
@@ -57,15 +59,17 @@ Given a new user, the user will be directed to a sign-in page where they will be
 
 &nbsp;
 ### Requirements 
-The user will opt to sign up for an account on Sclera.
-a.	The user will be asked to create an email, username, and password.
-i.	The user can opt in using Facebook, Twitter, Pinterest or LinkedIn
-b.	Once created, the user will verify their account credentials via verification email sent to their designated inbox.
-c.	Once verified they can edit their profile.
+
+1. The user will opt to sign up for an account on Sclera.
+- The user will be asked to create an email, username, and password.
+- The user can opt in using Facebook, Twitter, Pinterest or LinkedIn
+- Once created, the user will verify their account credentials via verification email sent to their designated inbox.
+- Once verified they can edit their profile.
+
 2.	The user can then opt-in to take an assessment/survey.
-a.	The questions they answer will be logged and saved.
-b.	Once saved the user can generate their recommendation.
-3.	The engine will deliver the user’s niche  & gear list recommendation based on the survey results
+- The questions they answer will be logged and saved.
+- Once saved the user can generate their recommendation.
+- The engine will deliver the user’s niche  & gear list recommendation based on the survey results
 
 
 
