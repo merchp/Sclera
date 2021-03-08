@@ -1,7 +1,7 @@
 # Sclera - Photo Gear List Engine
 #### *Created by Chrishaun Byrom*
 &nbsp;
-[N|Solid](https://github.com/merchp/sclera/blob/bf3ad0b4723723f7e08ee73ac7834dc176aa2f56/Powered%20by%20CB%5B169%5D.png)
+![Powered by CB](https://github.com/merchp/sclera/blob/bf3ad0b4723723f7e08ee73ac7834dc176aa2f56/Powered%20by%20CB%5B169%5D.png)
 
 [![Build Status](https://travis-ci.com/merchp/sclera.svg?branch=master)](https://travis-ci.com/github/merchp/sclera)
 
