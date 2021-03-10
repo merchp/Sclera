@@ -15,9 +15,10 @@
 1. **[Features](#Features)** 
 2. **[Tech](#Tech)**
 3. **[Requirements](Requirements)**
-4. **[Database Diagram](#DatabaseDiagram)**
-5. **[Wire Flow](#WireflowDraft)**
-6. **[Sample Mobile App Images](#SampleMobileAppImages)**
+4. **[Test Table](Test Table)**
+5. **[Database Diagram](#DatabaseDiagram)**
+6. **[Wire Flow](#WireflowDraft)**
+7. **[Sample Mobile App Images](#SampleMobileAppImages)**
 
 &nbsp;
 
@@ -72,6 +73,7 @@ Given a new user, the user will be directed to a sign-in page where they will be
 - Once saved the user can generate their recommendation.
 - The engine will deliver the user’s niche  & gear list recommendation based on the survey results
 
+&nbsp;
 ## Test Table
 
 | Test ID | Requirement ID | Test Procedure | Current Status | TimeStamp | Build/Version |
