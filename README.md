@@ -7,11 +7,12 @@
 
 1. **[Features](#Features)** 
 2. **[Tech](#Tech)**
-3. **[Requirements](Requirements)**
-4. **[Test Table](Test-Table)**
-5. **[Database Diagram](#Database-Diagram)**
-6. **[Wire Flow](#WireflowDraft)**
-7. **[Sample Mobile App Images](#SampleMobileAppImages)**
+3. **[ERD](#ERD)**
+4. **[Requirements](Requirements)**
+5. **[Test Table](Test-Table)**
+6. **[Database Diagram](#Database-Diagram)**
+7. **[Wire Flow](#WireflowDraft)**
+8. **[Sample Mobile App Images](#SampleMobileAppImages)**
 
 &nbsp;
 ## Description
@@ -41,6 +42,9 @@ Sclera uses a number of open source projects to work properly:
 - Blazor, Razor, Xamarin (C#)
 - TSQL
 
+&nbsp;
+# ERD
+![ERD](https://github.com/merchp/sclera/blob/7e64cb2baee2d19bc9dfbf4d18673220292c2123/Blank%20diagram.png)
 
 &nbsp;
 ## Requirements
