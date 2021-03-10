@@ -3,13 +3,6 @@
 ![Powered by CB](https://github.com/merchp/sclera/blob/bf3ad0b4723723f7e08ee73ac7834dc176aa2f56/Powered%20by%20CB%5B169%5D.png) [![Build Status](https://travis-ci.com/merchp/sclera.svg?branch=master)](https://travis-ci.com/github/merchp/sclera)
 
 &nbsp;
- 
-*Sclera is a photography gear recommendation engine for aspiring or experienced photographers.* Start a survey, answer some very penetrating questions about your passions and preferences, find your niche & get a custom list of gear that you can take out and cature your world, your way.  
-
-
-
-
-&nbsp;
 # Table of Contents
 
 1. **[Features](#Features)** 
@@ -19,6 +12,11 @@
 5. **[Database Diagram](#DatabaseDiagram)**
 6. **[Wire Flow](#WireflowDraft)**
 7. **[Sample Mobile App Images](#SampleMobileAppImages)**
+
+&nbsp;
+## Description
+ 
+*Sclera is a photography gear recommendation engine for aspiring or experienced photographers.* Start a survey, answer some very penetrating questions about your passions and preferences, find your niche & get a custom list of gear that you can take out and cature your world, your way.  
 
 &nbsp;
 
@@ -107,6 +105,6 @@ Here's the first implementation of the apps nooks & crannies.
 &nbsp;
 ![Sclera Wireflow](https://user-images.githubusercontent.com/46344252/108671452-53371500-7495-11eb-9764-6737901b3530.png)
 
-# Sample Mobile App Images
+# Sample Mobile App Mockups
 
-
+![photo1](https://github.com/merchp/sclera/blob/eb734656a39012409a2206eb34142496a5a34d0b/rf%2015-35mm%20product%20page%20-%20mobile.jpg) ![photo2](https://github.com/merchp/sclera/blob/eb734656a39012409a2206eb34142496a5a34d0b/r%20pics%20-%20mobile.jpg) ![photo3](https://github.com/merchp/sclera/blob/eb734656a39012409a2206eb34142496a5a34d0b/r%20bop%20page%20-%20mobile.jpg)
