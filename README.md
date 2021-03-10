@@ -90,19 +90,6 @@ Given a new user, the user will be directed to a sign-in page where they will be
 | 12      | 2.1.3	   | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
 | 13      | 3	       | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
 | 14      | 3.1	     | System Test          | Not Tested     | 00-00-0000 | 0.1|
-| 15      | 4    	   | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
-| 16      | 4.1      | System Test          | Not Tested     | 00-00-0000 | 0.1|
-| 17      | 5    	   | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
-| 18      | 5.1  	   | System Test          | Not Tested     | 00-00-0000 | 0.1|
-| 19      | 5.2  	   | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
-| 20      | 5.2.1    | System Test          | Not Tested     | 00-00-0000 | 0.1|
-| 21      | 6        | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
-| 22      | 6.1      | System Test          | Not Tested     | 00-00-0000 | 0.1|
-| 23      | 6.2      | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
-| 24      | 6.3  	   | Unti Test            | Not Tested     | 00-00-0000 | 0.1|
-| 25      | 6.4	     | Integration Test     | Not Tested     | 00-00-0000 | 0.1|
-| 26      | 7        | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
-| 27      | 8    	   | Unit Test/Manual verification | Not Tested     | 00-00-0000 | 0.1|
 
 
 
