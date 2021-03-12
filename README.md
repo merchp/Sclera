@@ -12,7 +12,7 @@
 5. **[Test Table](Test-Table)**
 6. **[Database Diagram](#Database-Diagram)**
 7. **[Wire Flow](#WireflowDraft)**
-8. **[Sample Mobile App Images](#SampleMobileAppImages)**
+
 
 &nbsp;
 ## Description
@@ -108,8 +108,5 @@ Here's the first implementation of the apps nooks & crannies.
 
 &nbsp;
 ![Sclera Wireflow](https://user-images.githubusercontent.com/46344252/108671452-53371500-7495-11eb-9764-6737901b3530.png)
-
-# Sample Mobile App Mockups
-<img src="https://github.com/merchp/sclera/blob/eb734656a39012409a2206eb34142496a5a34d0b/rf%2015-35mm%20product%20page%20-%20mobile.jpg" width="200" height="346"/> <img src="https://github.com/merchp/sclera/blob/eb734656a39012409a2206eb34142496a5a34d0b/r%20pics%20-%20mobile.jpg" width="200" height="346"/> <img src="https://github.com/merchp/sclera/blob/eb734656a39012409a2206eb34142496a5a34d0b/r%20bop%20page%20-%20mobile.jpg" width="200" height="346"/>
 
 
