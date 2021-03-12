@@ -12,7 +12,7 @@
 5. **[Test Table](Test-Table)**
 6. **[Database Diagram](#Database-Diagram)**
 7. **[Wire Flow](#WireflowDraft)**
-8. **[Prototypes}<a href="https://github.com/merchp/sclera/tree/master/Prototypes">Definition of URI and URL</a>
+8. <a href="https://github.com/merchp/sclera/tree/master/Prototypes">Prototypes</a>
 
 
 &nbsp;
