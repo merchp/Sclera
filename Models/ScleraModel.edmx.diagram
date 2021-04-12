@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eadeffed2b67439fb86e668e7566d177" Name="Diagram1">
+        <EntityTypeShape EntityType="ScleraDB2Model.Gear" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScleraDB2Model.Manufacturer" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScleraDB2Model.Question" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScleraDB2Model.Respondent" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScleraDB2Model.Survey" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScleraDB2Model.Survey_Response" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScleraDB2Model.Track" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="ScleraDB2Model.FK__Gear__brand_name__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="ScleraDB2Model.FK__Track__GearID__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ScleraDB2Model.FK__Survey_Re__respo__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="ScleraDB2Model.FK__Survey_Re__surve__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="ScleraDB2Model.FK__Track__survey_re__3A81B327" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

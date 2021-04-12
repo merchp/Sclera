@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ScleraDB2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gear">
+          <Key>
+            <PropertyRef Name="GearID" />
+          </Key>
+          <Property Name="GearID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand_name" Type="varchar" MaxLength="50" />
+          <Property Name="gear_name" Type="varchar" MaxLength="100" />
+          <Property Name="gear_type" Type="varchar" MaxLength="50" />
+          <Property Name="descrption" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Manufacturers">
+          <Key>
+            <PropertyRef Name="brand_name" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="int" Nullable="false" />
+          <Property Name="question" Type="varchar" MaxLength="254" />
+          <Property Name="updated" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ScleraDB2.dbo.Question_Order' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Question_Order">
+          <Property Name="question_id" Type="int" />
+          <Property Name="survey_id" Type="int" />
+          <Property Name="question_order" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Respondent">
+          <Key>
+            <PropertyRef Name="respondent_id" />
+          </Key>
+          <Property Name="respondent_id" Type="int" Nullable="false" />
+          <Property Name="rname" Type="varchar" MaxLength="75" />
+          <Property Name="npassword" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="254" />
+          <Property Name="created" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="survey_id" />
+          </Key>
+          <Property Name="survey_id" Type="int" Nullable="false" />
+          <Property Name="survey_name" Type="varchar" MaxLength="50" />
+          <Property Name="survey_description" Type="varchar" MaxLength="254" />
+          <Property Name="updated" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Survey_Response">
+          <Key>
+            <PropertyRef Name="survey_response_id" />
+          </Key>
+          <Property Name="survey_response_id" Type="int" Nullable="false" />
+          <Property Name="survey_id" Type="int" />
+          <Property Name="respondent_id" Type="int" />
+          <Property Name="updated" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="track_name" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="track_name" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="GearID" Type="int" />
+          <Property Name="survey_response_id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ScleraDB2.dbo.UserResponse' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="UserResponse">
+          <Property Name="survey_response_id" Type="int" />
+          <Property Name="question_id" Type="int" />
+          <Property Name="respondent_id" Type="int" />
+          <Property Name="answer" Type="varchar" MaxLength="254" />
+        </EntityType>-->
+        <Association Name="FK__Gear__brand_name__36B12243">
+          <End Role="Manufacturers" Type="Self.Manufacturers" Multiplicity="0..1" />
+          <End Role="Gear" Type="Self.Gear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturers">
+              <PropertyRef Name="brand_name" />
+            </Principal>
+            <Dependent Role="Gear">
+              <PropertyRef Name="brand_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'ScleraDB2.dbo.Question_Order' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Question___quest__29572725" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'ScleraDB2.dbo.Question_Order' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Question___surve__2A4B4B5E" />-->
+        <Association Name="FK__Survey_Re__respo__2E1BDC42">
+          <End Role="Respondent" Type="Self.Respondent" Multiplicity="0..1" />
+          <End Role="Survey_Response" Type="Self.Survey_Response" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respondent">
+              <PropertyRef Name="respondent_id" />
+            </Principal>
+            <Dependent Role="Survey_Response">
+              <PropertyRef Name="respondent_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Survey_Re__surve__2D27B809">
+          <End Role="Survey" Type="Self.Survey" Multiplicity="0..1" />
+          <End Role="Survey_Response" Type="Self.Survey_Response" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Survey">
+              <PropertyRef Name="survey_id" />
+            </Principal>
+            <Dependent Role="Survey_Response">
+              <PropertyRef Name="survey_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__GearID__398D8EEE">
+          <End Role="Gear" Type="Self.Gear" Multiplicity="0..1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gear">
+              <PropertyRef Name="GearID" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="GearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__survey_re__3A81B327">
+          <End Role="Survey_Response" Type="Self.Survey_Response" Multiplicity="0..1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Survey_Response">
+              <PropertyRef Name="survey_response_id" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="survey_response_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'ScleraDB2.dbo.UserResponse' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__UserRespo__quest__30F848ED" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'ScleraDB2.dbo.UserResponse' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__UserRespo__respo__31EC6D26" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'ScleraDB2.dbo.UserResponse' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__UserRespo__surve__300424B4" />-->
+        <EntityContainer Name="ScleraDB2ModelStoreContainer">
+          <EntitySet Name="Gear" EntityType="Self.Gear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacturers" EntityType="Self.Manufacturers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Respondent" EntityType="Self.Respondent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Survey" EntityType="Self.Survey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Survey_Response" EntityType="Self.Survey_Response" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Track" EntityType="Self.Track" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Gear__brand_name__36B12243" Association="Self.FK__Gear__brand_name__36B12243">
+            <End Role="Manufacturers" EntitySet="Manufacturers" />
+            <End Role="Gear" EntitySet="Gear" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Survey_Re__respo__2E1BDC42" Association="Self.FK__Survey_Re__respo__2E1BDC42">
+            <End Role="Respondent" EntitySet="Respondent" />
+            <End Role="Survey_Response" EntitySet="Survey_Response" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Survey_Re__surve__2D27B809" Association="Self.FK__Survey_Re__surve__2D27B809">
+            <End Role="Survey" EntitySet="Survey" />
+            <End Role="Survey_Response" EntitySet="Survey_Response" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__GearID__398D8EEE" Association="Self.FK__Track__GearID__398D8EEE">
+            <End Role="Gear" EntitySet="Gear" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__survey_re__3A81B327" Association="Self.FK__Track__survey_re__3A81B327">
+            <End Role="Survey_Response" EntitySet="Survey_Response" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ScleraDB2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gear">
+          <Key>
+            <PropertyRef Name="GearID" />
+          </Key>
+          <Property Name="GearID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gear_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="gear_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descrption" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Gear__brand_name__36B12243" FromRole="Gear" ToRole="Manufacturers" />
+          <NavigationProperty Name="Tracks" Relationship="Self.FK__Track__GearID__398D8EEE" FromRole="Gear" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="brand_name" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Gears" Relationship="Self.FK__Gear__brand_name__36B12243" FromRole="Manufacturers" ToRole="Gear" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="Int32" Nullable="false" />
+          <Property Name="question1" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="updated" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Respondent">
+          <Key>
+            <PropertyRef Name="respondent_id" />
+          </Key>
+          <Property Name="respondent_id" Type="Int32" Nullable="false" />
+          <Property Name="rname" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="npassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Survey_Response" Relationship="Self.FK__Survey_Re__respo__2E1BDC42" FromRole="Respondent" ToRole="Survey_Response" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="survey_id" />
+          </Key>
+          <Property Name="survey_id" Type="Int32" Nullable="false" />
+          <Property Name="survey_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="survey_description" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="updated" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Survey_Response" Relationship="Self.FK__Survey_Re__surve__2D27B809" FromRole="Survey" ToRole="Survey_Response" />
+        </EntityType>
+        <EntityType Name="Survey_Response">
+          <Key>
+            <PropertyRef Name="survey_response_id" />
+          </Key>
+          <Property Name="survey_response_id" Type="Int32" Nullable="false" />
+          <Property Name="survey_id" Type="Int32" />
+          <Property Name="respondent_id" Type="Int32" />
+          <Property Name="updated" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Respondent" Relationship="Self.FK__Survey_Re__respo__2E1BDC42" FromRole="Survey_Response" ToRole="Respondent" />
+          <NavigationProperty Name="Survey" Relationship="Self.FK__Survey_Re__surve__2D27B809" FromRole="Survey_Response" ToRole="Survey" />
+          <NavigationProperty Name="Tracks" Relationship="Self.FK__Track__survey_re__3A81B327" FromRole="Survey_Response" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="track_name" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="track_name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GearID" Type="Int32" />
+          <Property Name="survey_response_id" Type="Int32" />
+          <NavigationProperty Name="Gear" Relationship="Self.FK__Track__GearID__398D8EEE" FromRole="Track" ToRole="Gear" />
+          <NavigationProperty Name="Survey_Response" Relationship="Self.FK__Track__survey_re__3A81B327" FromRole="Track" ToRole="Survey_Response" />
+        </EntityType>
+        <Association Name="FK__Gear__brand_name__36B12243">
+          <End Role="Manufacturers" Type="Self.Manufacturer" Multiplicity="0..1" />
+          <End Role="Gear" Type="Self.Gear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturers">
+              <PropertyRef Name="brand_name" />
+            </Principal>
+            <Dependent Role="Gear">
+              <PropertyRef Name="brand_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__GearID__398D8EEE">
+          <End Role="Gear" Type="Self.Gear" Multiplicity="0..1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gear">
+              <PropertyRef Name="GearID" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="GearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Survey_Re__respo__2E1BDC42">
+          <End Role="Respondent" Type="Self.Respondent" Multiplicity="0..1" />
+          <End Role="Survey_Response" Type="Self.Survey_Response" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respondent">
+              <PropertyRef Name="respondent_id" />
+            </Principal>
+            <Dependent Role="Survey_Response">
+              <PropertyRef Name="respondent_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Survey_Re__surve__2D27B809">
+          <End Role="Survey" Type="Self.Survey" Multiplicity="0..1" />
+          <End Role="Survey_Response" Type="Self.Survey_Response" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Survey">
+              <PropertyRef Name="survey_id" />
+            </Principal>
+            <Dependent Role="Survey_Response">
+              <PropertyRef Name="survey_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__survey_re__3A81B327">
+          <End Role="Survey_Response" Type="Self.Survey_Response" Multiplicity="0..1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Survey_Response">
+              <PropertyRef Name="survey_response_id" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="survey_response_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ScleraDB2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gears" EntityType="Self.Gear" />
+          <EntitySet Name="Manufacturers" EntityType="Self.Manufacturer" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Respondents" EntityType="Self.Respondent" />
+          <EntitySet Name="Surveys" EntityType="Self.Survey" />
+          <EntitySet Name="Survey_Response" EntityType="Self.Survey_Response" />
+          <EntitySet Name="Tracks" EntityType="Self.Track" />
+          <AssociationSet Name="FK__Gear__brand_name__36B12243" Association="Self.FK__Gear__brand_name__36B12243">
+            <End Role="Manufacturers" EntitySet="Manufacturers" />
+            <End Role="Gear" EntitySet="Gears" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__GearID__398D8EEE" Association="Self.FK__Track__GearID__398D8EEE">
+            <End Role="Gear" EntitySet="Gears" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Survey_Re__respo__2E1BDC42" Association="Self.FK__Survey_Re__respo__2E1BDC42">
+            <End Role="Respondent" EntitySet="Respondents" />
+            <End Role="Survey_Response" EntitySet="Survey_Response" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Survey_Re__surve__2D27B809" Association="Self.FK__Survey_Re__surve__2D27B809">
+            <End Role="Survey" EntitySet="Surveys" />
+            <End Role="Survey_Response" EntitySet="Survey_Response" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__survey_re__3A81B327" Association="Self.FK__Track__survey_re__3A81B327">
+            <End Role="Survey_Response" EntitySet="Survey_Response" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ScleraDB2ModelStoreContainer" CdmEntityContainer="ScleraDB2Entities">
+          <EntitySetMapping Name="Gears">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Gear">
+              <MappingFragment StoreEntitySet="Gear">
+                <ScalarProperty Name="GearID" ColumnName="GearID" />
+                <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+                <ScalarProperty Name="gear_name" ColumnName="gear_name" />
+                <ScalarProperty Name="gear_type" ColumnName="gear_type" />
+                <ScalarProperty Name="descrption" ColumnName="descrption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturers">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="brand_name" ColumnName="brand_name" />
+                <ScalarProperty Name="country" ColumnName="country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question1" ColumnName="question" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Respondents">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Respondent">
+              <MappingFragment StoreEntitySet="Respondent">
+                <ScalarProperty Name="respondent_id" ColumnName="respondent_id" />
+                <ScalarProperty Name="rname" ColumnName="rname" />
+                <ScalarProperty Name="npassword" ColumnName="npassword" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surveys">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Survey">
+              <MappingFragment StoreEntitySet="Survey">
+                <ScalarProperty Name="survey_id" ColumnName="survey_id" />
+                <ScalarProperty Name="survey_name" ColumnName="survey_name" />
+                <ScalarProperty Name="survey_description" ColumnName="survey_description" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey_Response">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Survey_Response">
+              <MappingFragment StoreEntitySet="Survey_Response">
+                <ScalarProperty Name="survey_response_id" ColumnName="survey_response_id" />
+                <ScalarProperty Name="survey_id" ColumnName="survey_id" />
+                <ScalarProperty Name="respondent_id" ColumnName="respondent_id" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracks">
+            <EntityTypeMapping TypeName="ScleraDB2Model.Track">
+              <MappingFragment StoreEntitySet="Track">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="track_name" ColumnName="track_name" />
+                <ScalarProperty Name="GearID" ColumnName="GearID" />
+                <ScalarProperty Name="survey_response_id" ColumnName="survey_response_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

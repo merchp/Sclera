@@ -1,0 +1,50 @@
+﻿@model Sclera2.Models.Respondent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Respondent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.npassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.npassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.respondent_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

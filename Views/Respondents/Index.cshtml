@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Sclera2.Models.Respondent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.rname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.npassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.rname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.npassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.respondent_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.respondent_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.respondent_id })
+        </td>
+    </tr>
+}
+
+</table>

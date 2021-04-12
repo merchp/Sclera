@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sclera2", "Sclera2.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sclera2.Tests", "..\Sclera2.Tests\Sclera2.Tests.csproj", "{090181F0-E99C-4E11-8C03-C29B1479725B}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ScleraSurvey", "..\ScleraSurvey\ScleraSurvey.sqlproj", "{85F3682D-EE66-4E3E-84B1-342573EE048B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{090181F0-E99C-4E11-8C03-C29B1479725B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090181F0-E99C-4E11-8C03-C29B1479725B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090181F0-E99C-4E11-8C03-C29B1479725B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F3682D-EE66-4E3E-84B1-342573EE048B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85F3682D-EE66-4E3E-84B1-342573EE048B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85F3682D-EE66-4E3E-84B1-342573EE048B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{85F3682D-EE66-4E3E-84B1-342573EE048B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85F3682D-EE66-4E3E-84B1-342573EE048B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F3682D-EE66-4E3E-84B1-342573EE048B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
